@@ -1,139 +1,61 @@
 # Pages CMS Configuration
 # https://pagescms.org/
 
+site:
+  title: Grüner Daumen Gartenbau
+
 collections:
-  # Startseite
-  - label: Startseite
-    name: home
-    folder: content/
-    format: frontmatter
-    slug: index
+  - name: home
+    label: Startseite
+    path: content/index.md
     fields:
       - name: hero_title
-        label: Hero Titel
         type: string
       - name: hero_subtitle
-        label: Hero Untertitel
         type: text
       - name: hero_cta_text
-        label: CTA Button Text
         type: string
       - name: hero_cta_link
-        label: CTA Button Link
         type: string
 
-  # Kontakt
-  - label: Kontakt
-    name: contact
-    folder: content/
-    format: frontmatter
-    slug: contact
+  - name: contact
+    label: Kontakt
+    path: content/contact.md
     fields:
       - name: address
-        label: Adresse
         type: text
       - name: phone
-        label: Telefon
         type: string
       - name: email
-        label: E-Mail
         type: string
       - name: hours
-        label: Öffnungszeiten
         type: text
 
-  # Footer
-  - label: Footer
-    name: footer
-    folder: content/
-    format: frontmatter
-    slug: footer
+  - name: footer
+    label: Footer
+    path: content/footer.md
     fields:
       - name: copyright_text
-        label: Copyright Text
-        type: string
-      - name: social_facebook
-        label: Facebook
-        type: string
-      - name: social_instagram
-        label: Instagram
-        type: string
-      - name: social_linkedin
-        label: LinkedIn
         type: string
 
-  # Leistungen
-  - label: Leistungen
-    name: services
+  - name: services
+    label: Leistungen
     folder: content/services/
-    format: frontmatter
     fields:
       - name: title
-        label: Titel
         type: string
       - name: description
-        label: Beschreibung
         type: text
       - name: icon
-        label: Icon
         type: string
-      - name: order
-        label: Reihenfolge
-        type: number
 
-  # Kundenstimmen
-  - label: Kundenstimmen
-    name: testimonials
+  - name: testimonials
+    label: Kundenstimmen
     folder: content/testimonials/
-    format: frontmatter
     fields:
       - name: name
-        label: Name
         type: string
       - name: location
-        label: Ort
         type: string
       - name: quote
-        label: Zitat
         type: text
-      - name: rating
-        label: Bewertung
-        type: number
-
-  # Galerie
-  - label: Galerie
-    name: gallery
-    folder: content/gallery/
-    format: frontmatter
-    fields:
-      - name: title
-        label: Titel
-        type: string
-      - name: image
-        label: Bild
-        type: string
-      - name: alt
-        label: Alt Text
-        type: string
-      - name: category
-        label: Kategorie
-        type: string
-
-  # Team
-  - label: Team
-    name: team
-    folder: content/team/
-    format: frontmatter
-    fields:
-      - name: name
-        label: Name
-        type: string
-      - name: role
-        label: Beruf
-        type: string
-      - name: bio
-        label: Beschreibung
-        type: text
-      - name: image
-        label: Bild
-        type: string

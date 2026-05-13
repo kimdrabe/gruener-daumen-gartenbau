@@ -1,6 +1,11 @@
 # Pages CMS Configuration
 # https://pagescms.org/
 
+backend:
+  name: github
+  repo: kimdrabe/gruener-daumen-gartenbau
+  branch: main
+
 collections:
   # Startseite
   - name: home

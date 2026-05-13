@@ -11,16 +11,16 @@ collections:
     fields:
       - name: hero_title
         label: Hero Titel
-        widget: string
+        type: string
       - name: hero_subtitle
         label: Hero Untertitel
-        widget: text
+        type: text
       - name: hero_cta_text
         label: CTA Button Text
-        widget: string
+        type: string
       - name: hero_cta_link
         label: CTA Button Link
-        widget: string
+        type: string
 
   # Kontakt
   - label: Kontakt
@@ -31,16 +31,16 @@ collections:
     fields:
       - name: address
         label: Adresse
-        widget: text
+        type: text
       - name: phone
         label: Telefon
-        widget: string
+        type: string
       - name: email
         label: E-Mail
-        widget: string
+        type: string
       - name: hours
         label: Öffnungszeiten
-        widget: text
+        type: text
 
   # Footer
   - label: Footer
@@ -51,16 +51,16 @@ collections:
     fields:
       - name: copyright_text
         label: Copyright Text
-        widget: string
+        type: string
       - name: social_facebook
         label: Facebook
-        widget: string
+        type: string
       - name: social_instagram
         label: Instagram
-        widget: string
+        type: string
       - name: social_linkedin
         label: LinkedIn
-        widget: string
+        type: string
 
   # Leistungen
   - label: Leistungen
@@ -70,16 +70,16 @@ collections:
     fields:
       - name: title
         label: Titel
-        widget: string
+        type: string
       - name: description
         label: Beschreibung
-        widget: text
+        type: text
       - name: icon
         label: Icon
-        widget: string
+        type: string
       - name: order
         label: Reihenfolge
-        widget: number
+        type: number
 
   # Kundenstimmen
   - label: Kundenstimmen
@@ -89,16 +89,16 @@ collections:
     fields:
       - name: name
         label: Name
-        widget: string
+        type: string
       - name: location
         label: Ort
-        widget: string
+        type: string
       - name: quote
         label: Zitat
-        widget: text
+        type: text
       - name: rating
         label: Bewertung
-        widget: number
+        type: number
 
   # Galerie
   - label: Galerie
@@ -108,16 +108,16 @@ collections:
     fields:
       - name: title
         label: Titel
-        widget: string
+        type: string
       - name: image
         label: Bild
-        widget: string
+        type: string
       - name: alt
         label: Alt Text
-        widget: string
+        type: string
       - name: category
         label: Kategorie
-        widget: string
+        type: string
 
   # Team
   - label: Team
@@ -127,13 +127,13 @@ collections:
     fields:
       - name: name
         label: Name
-        widget: string
+        type: string
       - name: role
         label: Beruf
-        widget: string
+        type: string
       - name: bio
         label: Beschreibung
-        widget: text
+        type: text
       - name: image
         label: Bild
-        widget: string
+        type: string

@@ -1,141 +1,139 @@
 # Pages CMS Configuration
 # https://pagescms.org/
 
-backend:
-  name: github
-  repo: kimdrabe/gruener-daumen-gartenbau
-  branch: main
-
 collections:
   # Startseite
-  - name: home
-    label: Startseite
-    path: content/
-    filter: index.md
+  - label: Startseite
+    name: home
+    folder: content/
+    format: frontmatter
+    slug: index
     fields:
       - name: hero_title
         label: Hero Titel
-        type: string
+        widget: string
       - name: hero_subtitle
         label: Hero Untertitel
-        type: text
+        widget: text
       - name: hero_cta_text
         label: CTA Button Text
-        type: string
+        widget: string
       - name: hero_cta_link
         label: CTA Button Link
-        type: string
+        widget: string
 
   # Kontakt
-  - name: contact
-    label: Kontakt
-    path: content/
-    filter: contact.md
+  - label: Kontakt
+    name: contact
+    folder: content/
+    format: frontmatter
+    slug: contact
     fields:
       - name: address
         label: Adresse
-        type: text
+        widget: text
       - name: phone
         label: Telefon
-        type: string
+        widget: string
       - name: email
         label: E-Mail
-        type: string
+        widget: string
       - name: hours
         label: Öffnungszeiten
-        type: text
+        widget: text
 
   # Footer
-  - name: footer
-    label: Footer
-    path: content/
-    filter: footer.md
+  - label: Footer
+    name: footer
+    folder: content/
+    format: frontmatter
+    slug: footer
     fields:
       - name: copyright_text
         label: Copyright Text
-        type: string
+        widget: string
       - name: social_facebook
         label: Facebook
-        type: string
+        widget: string
       - name: social_instagram
         label: Instagram
-        type: string
+        widget: string
       - name: social_linkedin
         label: LinkedIn
-        type: string
+        widget: string
 
   # Leistungen
-  - name: services
-    label: Leistungen
-    label_singular: Leistung
-    path: content/services/
+  - label: Leistungen
+    name: services
+    folder: content/services/
+    format: frontmatter
     fields:
       - name: title
         label: Titel
-        type: string
+        widget: string
       - name: description
         label: Beschreibung
-        type: text
+        widget: text
       - name: icon
         label: Icon
-        type: string
+        widget: string
       - name: order
         label: Reihenfolge
-        type: number
+        widget: number
 
   # Kundenstimmen
-  - name: testimonials
-    label: Kundenstimmen
-    label_singular: Kundenstimme
-    path: content/testimonials/
+  - label: Kundenstimmen
+    name: testimonials
+    folder: content/testimonials/
+    format: frontmatter
     fields:
       - name: name
         label: Name
-        type: string
+        widget: string
       - name: location
         label: Ort
-        type: string
+        widget: string
       - name: quote
         label: Zitat
-        type: text
+        widget: text
       - name: rating
         label: Bewertung
-        type: number
+        widget: number
 
   # Galerie
-  - name: gallery
-    label: Galerie
-    label_singular: Bild
-    path: content/gallery/
+  - label: Galerie
+    name: gallery
+    folder: content/gallery/
+    format: frontmatter
     fields:
       - name: title
         label: Titel
-        type: string
+        widget: string
       - name: image
         label: Bild
-        type: string
+        widget: string
       - name: alt
         label: Alt Text
-        type: string
+        widget: string
       - name: category
         label: Kategorie
-        type: string
+        widget: string
 
   # Team
-  - name: team
-    label: Team
-    label_singular: Teammitglied
-    path: content/team/
+  - label: Team
+    name: team
+    folder: content/team/
+    format: frontmatter
     fields:
       - name: name
         label: Name
-        type: string
+        widget: string
       - name: role
         label: Beruf
-        type: string
+        widget: string
       - name: bio
         label: Beschreibung
-        type: text
+        widget: text
       - name: image
         label: Bild
-        type: string
+        widget: string

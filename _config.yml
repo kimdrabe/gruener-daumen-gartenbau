@@ -1,0 +1,29 @@
+# Jekyll Configuration for GitHub Pages
+# https://pages.github.com/
+
+title: Grüner Daumen Gartenbau
+description: Professionelle Gartenpflege und -gestaltung in München und Umgebung. Meisterbetrieb mit über 15 Jahren Erfahrung.
+author: Grüner Daumen Gartenbau
+email: info@gruener-daumen-gartenbau.de
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo
+
+# Exclude from processing
+exclude:
+  - DESIGN.md
+  - .pages.yml
+  - node_modules/
+  - vendor/
+  - .git/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Paginate
+paginate: 5
+paginate_path: /blog/page:num/

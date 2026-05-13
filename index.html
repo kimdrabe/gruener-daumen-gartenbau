@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang=de>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Grüner Daumen Gartenbau | Gärtnermeisterbetrieb</title>
+    <link rel=preconnect href=https://fonts.googleapis.com>
+    <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+    <link href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap rel=stylesheet>
+    <style>
+        :root {
+            --primary: #cc785c;
+            --primary-active: #a9583e;
+            --primary-disabled: #e6dfd8;
+            --ink: #141413;
+            --body: #3d3d3a;
+            --body-strong: #252523;
+            --muted: #6c6a64;
+            --muted-soft: #8e8b82;
+            --hairline: #e6dfd8;
+            --hairline-soft: #ebe6df;
+            --canvas: #faf9f5;
+            --surface-soft: #f5f0e8;
+            --surface-card: #efe9de;
+            --surface-cream-strong: #e8e0d2;
+            --surface-dark: #181715;
+            --surface-dark-elevated: #252320;
+            --on-primary: #ffffff;
+            --on-dark: #faf9f5;
+            --on-dark-soft: #a09d96;
+            --accent-teal: #5db8a6;
+            --accent-amber: #e8a55a;
+            --success: #5db872;
+            --warning: #d4a017;
+            --error: #c64545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--canvas);
+            color: var(--body);
+            line-height: 1.55;
+            font-size: 16px;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background-color: var(--canvas);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            z-index: 1000;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-active);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 48px 96px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            color: var(--ink);
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--body);
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-active);
+        }
+
+        .btn-secondary {
+            background-color: var(--canvas);
+            color: var(--ink);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid var(--hairline);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--ink);
+        }
+
+        .hero-image {
+            background-color: var(--surface-card);
+            border-radius: 16px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary) 100%);
+            opacity: 0.15;
+        }
+
+        .hero-image-content {
+            font-size: 120px;
+            opacity: 0.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 96px 48px;
+            background-color: var(--surface-card);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--canvas);
+            border-radius: 12px;
+            padding: 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(20, 20, 19, 0.08);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 96px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-image {
+            background-color: var(--surface-dark);
+            border-radius: 16px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--on-dark);
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .about-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-content p {
+            color: var(--body);
+            margin-bottom: 16px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--hairline);
+        }
+
+        .stat-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 96px 48px;
+            background-color: var(--surface-soft);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: var(--canvas);
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid var(--hairline);
+        }
+
+        .testimonial-card .stars {
+            color: var(--accent-amber);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card p {
+            color: var(--body);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: var(--surface-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .testimonial-info h5 {
+            color: var(--ink);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .testimonial-info span {
+            color: var(--muted-soft);
+            font-size: 13px;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 96px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background-color: var(--surface-card);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.2;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 96px 48px;
+            background-color: var(--surface-dark);
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .contact-info h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--on-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info p {
+            color: var(--on-dark-soft);
+            font-size: 17px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--on-dark);
+        }
+
+        .contact-item-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--surface-dark-elevated);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .contact-item-text span {
+            display: block;
+            font-size: 13px;
+            color: var(--on-dark-soft);
+            margin-bottom: 2px;
+        }
+
+        .contact-item-text strong {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            background-color: var(--surface-dark-elevated);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--on-dark);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background-color: var(--surface-dark);
+            border: 1px solid var(--surface-dark-soft);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--on-dark);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--muted);
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            justify-content: center;
+            padding: 14px 24px;
+            font-size: 15px;
+        }
+
+        /* CTA Band */
+        .cta-band {
+            padding: 64px 48px;
+            background-color: var(--primary);
+            text-align: center;
+        }
+
+        .cta-band h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--on-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .cta-band p {
+            color: var(--on-primary);
+            opacity: 0.9;
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+
+        .cta-band .btn-secondary {
+            background-color: var(--on-primary);
+            color: var(--ink);
+            border-color: var(--on-primary);
+        }
+
+        .cta-band .btn-secondary:hover {
+            background-color: var(--canvas);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 64px 48px 32px;
+            background-color: var(--surface-dark);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--surface-dark-soft);
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--on-dark);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--on-dark-soft);
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .footer-links h4 {
+            color: var(--on-dark);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--on-dark-soft);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: var(--muted-soft);
+            font-size: 13px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background-color: var(--surface-dark-elevated);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--on-dark-soft);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            color: var(--on-primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background-color: var(--canvas);
+            padding: 24px;
+            border-bottom: 1px solid var(--hairline);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .mobile-menu .nav-cta {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--ink);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 140px 32px 64px;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+                height: 350px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 24px 48px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services {
+                padding: 64px 24px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                padding: 64px 24px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .testimonials {
+                padding: 64px 24px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                padding: 64px 24px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact {
+                padding: 64px 24px;
+            }
+
+            .cta-band {
+                padding: 48px 24px;
+            }
+
+            .footer {
+                padding: 48px 24px 24px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        /* JavaScript */
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+
+                    const spans = mobileMenuBtn.querySelectorAll('span');
+                    if (mobileMenu.classList.contains('active')) {
+                        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    } else {
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
+
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        const spans = mobileMenuBtn.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    });
+                });
+            }
+        });
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class=nav>
+        <a href=# class=nav-logo>
+            <svg class=nav-logo-icon viewBox=0 0 32 32 fill=none xmlns=http://www.w3.org/2000/svg>
+                <circle cx=16 cy=16 r=14 fill=#cc785c/>
+                <path d=M16 8v16M8 16h16M11 11l10 10M21 11l-10 10 stroke=#faf9f5 stroke-width=2 stroke-linecap=round/>
+            </svg>
+            <span class=nav-logo-text>Grüner Daumen</span>
+        </a>
+        <ul class=nav-links>
+            <li><a href=#services>Leistungen</a></li>
+            <li><a href=#about>Über uns</a></li>
+            <li><a href=#gallery>Galerie</a></li>
+            <li><a href=#testimonials>Meinungen</a></li>
+            <li><a href=#contact>Kontakt</a></li>
+        </ul>
+        <a href=#contact class=nav-cta>Kostenlos beraten</a>
+        <button class=mobile-menu-btn aria-label=Menu>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class=mobile-menu id=mobileMenu>
+        <ul>
+            <li><a href=#services>Leistungen</a></li>
+            <li><a href=#about>Über uns</a></li>
+            <li><a href=#gallery>Galerie</a></li>
+            <li><a href=#testimonials>Meinungen</a></li>
+            <li><a href=#contact>Kontakt</a></li>
+        </ul>
+        <a href=#contact class=nav-cta>Kostenlos beraten</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class=hero>
+        <div class=hero-content>
+            <h1>Ihr Garten, unsere Leidenschaft</h1>
+            <p>Professionelle Gartenpflege und -gestaltung mit über 15 Jahren Erfahrung. Wir verwandeln Ihren Außenbereich in eine grüne Oase.</p>
+            <div class=hero-buttons>
+                <a href=#contact class=btn-primary>
+                    Kostenlose Beratung
+                    <svg width=16 height=16 viewBox=0 0 16 16 fill=currentColor>
+                        <path d=M8 0l6 8H2l6-8zm0 16l-6-8h12l-6 8z fill-opacity=0.5/>
+                    </svg>
+                </a>
+                <a href=#services class=btn-secondary>Mehr erfahren</a>
+            </div>
+        </div>
+        <div class=hero-image role=img aria-label="Schöner gepflegter Garten mit blühenden Pflanzen">
+            <div class=hero-image-content aria-hidden=true>🌿</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class=services id=services>
+        <div class=section-header>
+            <h2>Unsere Leistungen</h2>
+            <p>Von der Planung bis zur Pflege – wir bieten Ihnen den kompletten Service für Ihren Traumgarten</p>
+        </div>
+        <div class=services-grid>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>🌳</div>
+                <h3>Gartengestaltung</h3>
+                <p>Individuelle Planung und Umsetzung Ihres Traumgartens. Von der Rasenfläche bis zur kompletten Neuanlage.</p>
+            </div>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>✂️</div>
+                <h3>Regelmäßige Pflege</h3>
+                <p>Saisonale Pflegeintervalle für Ihren Garten. Rasenmähen, Heckenschnitt, Unkrautentfernung uvm.</p>
+            </div>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>🌺</div>
+                <h3>Pflanzung & Beete</h3>
+                <p>Fachgerechte Bepflanzung von Rabatten, Staudenbeeten und Gehölzen. Trendpflanzen und классики.</p>
+            </div>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>💧</div>
+                <h3>Bewässerungssysteme</h3>
+                <p>Installation von automatischen Bewässerungsanlagen. Wassersparen leicht gemacht für Ihren Garten.</p>
+            </div>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>🧱</div>
+                <h3>Wegebau & Terrassen</h3>
+                <p>Pflasterarbeiten, Wegeanlage und Terrassenbau. Gestaltung mit Naturstein und Betonpflaster.</p>
+            </div>
+            <div class=service-card>
+                <div class=service-icon aria-hidden=true>🎄</div>
+                <h3>Baumpflege & Fällung</h3>
+                <p>Fachgerechte Baumpflege, Schnittmaßnahmen und sichere Baumfällung nach DIN 20120.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class=about id=about>
+        <div class=about-grid>
+            <div class=about-image role=img aria-label="Gärtner bei der Arbeit">
+                <span aria-hidden=true>👨‍🌾</span>
+            </div>
+            <div class=about-content>
+                <h2>Meisterbetrieb mit Herz</h2>
+                <p>Seit über 15 Jahren gestalten und pflegen wir Gärten in der Region. Unser Team aus erfahrenen Gärtnern und Landschaftsgärtnern steht für Qualität, Zuverlässigkeit und echte Leidenschaft für das Grün.</p>
+                <p>Als Meisterbetrieb legen wir besonderen Wert auf fachgerechte Ausführung und nachhaltige Lösungen. Ob klassischer Ziergarten, moderne Gartenanlage oder naturnahe Gestaltung – wir finden die passende Lösung für Sie.</p>
+                <div class=about-stats>
+                    <div class=stat-item>
+                        <h4>15+</h4>
+                        <p>Jahre Erfahrung</p>
+                    </div>
+                    <div class=stat-item>
+                        <h4>500+</h4>
+                        <p>Zufriedene Kunden</p>
+                    </div>
+                    <div class=stat-item>
+                        <h4>100%</h4>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class=testimonials id=testimonials>
+        <div class=section-header>
+            <h2>Das sagen unsere Kunden</h2>
+            <p>Über 500 glückliche Gartenbesitzer in der Region</p>
+        </div>
+        <div class=testimonials-grid>
+            <div class=testimonial-card>
+                <div class=stars>★★★★★</div>
+                <p>„Hervorragende Arbeit! Unser verwilderter Garten wurde in ein wahres Paradies verwandelt. Die Zusammenarbeit war professionell und termingerecht.”</p>
+                <div class=testimonial-author>
+                    <div class=testimonial-avatar aria-hidden=true>👩</div>
+                    <div class=testimonial-info>
+                        <h5>Sabine Müller</h5>
+                        <span>Gartenbesitzerin, München</span>
+                    </div>
+                </div>
+            </div>
+            <div class=testimonial-card>
+                <div class=stars>★★★★★</div>
+                <p>„Seit Jahren kümmert sich das Team um unseren Garten. Pünktlich, zuverlässig und immer mit einem Lächeln. Absolute Empfehlung!”</p>
+                <div class=testimonial-author>
+                    <div class=testimonial-avatar aria-hidden=true>👨</div>
+                    <div class=testimonial-info>
+                        <h5>Thomas Weber</h5>
+                        <span>Hausbesitzer, Augsburg</span>
+                    </div>
+                </div>
+            </div>
+            <div class=testimonial-card>
+                <div class=stars>★★★★★</div>
+                <p>„Die neue Bewässerungsanlage war die beste Investition. Weniger Arbeit, aber der Garten sieht besser aus als je zuvor!”</p>
+                <div class=testimonial-author>
+                    <div class=testimonial-avatar aria-hidden=true>👩</div>
+                    <div class=testimonial-info>
+                        <h5>Anna Schmidt</h5>
+                        <span>Gartenliebhaberin, Rosenheim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class=gallery id=gallery>
+        <div class=section-header>
+            <h2>Unsere Arbeit</h2>
+            <p>Ein kleiner Einblick in unsere Projekte</p>
+        </div>
+        <div class=gallery-grid>
+            <div class=gallery-item role=img aria-label="Rosenbeet im Sommer">🌿</div>
+            <div class=gallery-item role=img aria-label="Blühende Stauden">🌸</div>
+            <div class=gallery-item role=img aria-label="Gartenlaube">🏡</div>
+            <div class=gallery-item role=img aria-label="Sonnenblumen">🌻</div>
+            <div class=gallery-item role=img aria-label="Koniferen">🌲</div>
+            <div class=gallery-item role=img aria-label="Tulpenbeet">🌷</div>
+            <div class=gallery-item role=img aria-label="Grüne Hecke">🍃</div>
+            <div class=gallery-item role=img aria-label="Wildblumenwiese">🌼</div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class=cta-band>
+        <h2>Bereit für Ihren Traumgarten?</h2>
+        <p>Lassen Sie uns gemeinsam Ihre grüne Oase gestalten</p>
+        <a href=#contact class=btn-secondary>Jetzt Beratung anfragen</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class=contact id=contact>
+        <div class=contact-inner>
+            <div class=contact-info>
+                <h2>Kontaktieren Sie uns</h2>
+                <p>Habt Ihr Fragen oder möchtet einen Termin vereinbaren? Schreibt uns oder ruft direkt an – wir freuen uns auf Euch!</p>
+                <div class=contact-details>
+                    <div class=contact-item>
+                        <div class=contact-item-icon aria-hidden=true>📍</div>
+                        <div class=contact-item-text>
+                            <span>Adresse</span>
+                            <strong>Gartenstraße 42, 80331 München</strong>
+                        </div>
+                    </div>
+                    <div class=contact-item>
+                        <div class=contact-item-icon aria-hidden=true>📞</div>
+                        <div class=contact-item-text>
+                            <span>Telefon</span>
+                            <strong>+49 89 123 456 78</strong>
+                        </div>
+                    </div>
+                    <div class=contact-item>
+                        <div class=contact-item-icon aria-hidden=true>✉️</div>
+                        <div class=contact-item-text>
+                            <span>E-Mail</span>
+                            <strong>info@gruener-daumen-gartenbau.de</strong>
+                        </div>
+                    </div>
+                    <div class=contact-item>
+                        <div class=contact-item-icon aria-hidden=true>🕐</div>
+                        <div class=contact-item-text>
+                            <span>Öffnungszeiten</span>
+                            <strong>Mo-Fr: 8:00 - 18:00 Uhr</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class=contact-form>
+                <div class=form-group>
+                    <label for=name>Name</label>
+                    <input type=text id=name placeholder=Ihr Name required>
+                </div>
+                <div class=form-group>
+                    <label for=email>E-Mail</label>
+                    <input type=email id=email placeholder=ihre@email.de required>
+                </div>
+                <div class=form-group>
+                    <label for=phone>Telefon</label>
+                    <input type=tel id=phone placeholder=+49 89 123 456 78>
+                </div>
+                <div class=form-group>
+                    <label for=message>Ihre Nachricht</label>
+                    <textarea id=message placeholder=Wie können wir Ihnen helfen? required></textarea>
+                </div>
+                <button type=submit class=btn-primary>Nachricht senden 🌱</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=footer>
+        <div class=footer-inner>
+            <div class=footer-top>
+                <div class=footer-brand>
+                    <h3>Grüner Daumen Gartenbau</h3>
+                    <p>Ihr professioneller Partner für Gartengestaltung und -pflege in München und Umgebung. Meisterbetrieb mit Leidenschaft für Grün.</p>
+                </div>
+                <div class=footer-links>
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href=#services>Gartengestaltung</a></li>
+                        <li><a href=#services>Regelmäßige Pflege</a></li>
+                        <li><a href=#services>Pflanzung & Beete</a></li>
+                        <li><a href=#services>Bewässerung</a></li>
+                    </ul>
+                </div>
+                <div class=footer-links>
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href=#about>Über uns</a></li>
+                        <li><a href=#gallery>Galerie</a></li>
+                        <li><a href=#testimonials>Bewertungen</a></li>
+                        <li><a href=#contact>Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class=footer-links>
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href=#>Impressum</a></li>
+                        <li><a href=#>Datenschutz</a></li>
+                        <li><a href=#>AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class=footer-bottom>
+                <p>© 2025 Grüner Daumen Gartenbau. Alle Rechte vorbehalten.</p>
+                <div class=footer-social>
+                    <a href=# aria-label=Facebook>📘</a>
+                    <a href=# aria-label=Instagram>📷</a>
+                    <a href=# aria-label=LinkedIn>💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

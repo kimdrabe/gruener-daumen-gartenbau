@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang=de>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Impressum | Grüner Daumen Gartenbau</title>
+    <link rel=preconnect href=https://fonts.googleapis.com>
+    <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+    <link href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap rel=stylesheet>
+    <style>
+        :root {
+            --primary: #cc785c;
+            --primary-active: #a9583e;
+            --ink: #141413;
+            --body: #3d3d3a;
+            --muted: #6c6a64;
+            --hairline: #e6dfd8;
+            --canvas: #faf9f5;
+            --surface-card: #efe9de;
+            --surface-dark: #181715;
+            --on-primary: #ffffff;
+            --on-dark: #faf9f5;
+            --on-dark-soft: #a09d96;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--canvas);
+            color: var(--body);
+            line-height: 1.7;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background-color: var(--canvas);
+            display: flex;
+            align-items: center;
+            padding: 0 48px;
+            border-bottom: 1px solid var(--hairline);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .nav-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .back-link {
+            margin-left: auto;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 24px 96px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--ink);
+            margin: 40px 0 16px;
+        }
+
+        p, li {
+            color: var(--body);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .footer {
+            padding: 48px 24px;
+            background-color: var(--surface-dark);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--on-dark-soft);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav { padding: 0 24px; }
+            h1 { font-size: 32px; }
+            .content { padding: 100px 24px 64px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class=nav>
+        <a href=index.html class=nav-logo>
+            <span class=nav-logo-text>Grüner Daumen</span>
+        </a>
+        <a href=index.html class=back-link>← Zurück zur Startseite</a>
+    </nav>
+
+    <main class=content>
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+            <strong>Grüner Daumen Gartenbau GmbH</strong><br>
+            Gartenstraße 42<br>
+            80331 München
+        </p>
+
+        <h2>Vertreten durch</h2>
+        <p>Max Gärtner, Geschäftsführer</p>
+
+        <h2>Kontakt</h2>
+        <p>
+            Telefon: +49 89 123 456 78<br>
+            E-Mail: info@gruener-daumen-gartenbau.de
+        </p>
+
+        <h2>Registereintrag</h2>
+        <p>
+            Eintragung im Handelsregister<br>
+            Registergericht: Amtsgericht München<br>
+            Registernummer: HRB 123456
+        </p>
+
+        <h2>Umsatzsteuer-ID</h2>
+        <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+            DE 123 456 789
+        </p>
+
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p>
+            Max Gärtner<br>
+            Gartenstraße 42<br>
+            80331 München
+        </p>
+
+        <h2>Streitschlichtung</h2>
+        <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+            <a href=https://ec.europa.eu/consumers/odr/ style=color:var(--primary)>https://ec.europa.eu/consumers/odr/</a>.<br>
+            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </p>
+        <p>
+            Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.
+        </p>
+
+        <h2>Quellenangaben für die verwendeten Bilder und Grafiken</h2>
+        <p>
+            Die auf dieser Website verwendeten Bilder sind Eigentum des Unternehmens oder wurden von uns selbst erstellt.
+        </p>
+    </main>
+
+    <footer class=footer>
+        <p>© 2025 Grüner Daumen Gartenbau. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

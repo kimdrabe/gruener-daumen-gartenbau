@@ -1,0 +1,171 @@
+backend:
+  name: github
+  repo: kimdrabe/gruener-daumen-gartenbau
+  branch: main
+
+# Local backend for testing
+# backend:
+#   name: local
+
+# Media folder
+media_folder: assets/images
+public_folder: /assets/images
+
+# Collections
+collections:
+  # Startseite
+  - name: home
+    label: Startseite
+    files:
+      - label: Startseite
+        name: index
+        file: content/index.md
+        fields:
+          - label: Hero Titel
+            name: hero_title
+            widget: string
+          - label: Hero Untertitel
+            name: hero_subtitle
+            widget: text
+          - label: CTA Button Text
+            name: hero_cta_text
+            widget: string
+            default: Kostenlose Beratung
+          - label: CTA Button Link
+            name: hero_cta_link
+            widget: string
+            default: '#contact'
+
+  # Kontakt
+  - name: contact
+    label: Kontakt
+    files:
+      - label: Kontaktinformationen
+        name: contact
+        file: content/contact.md
+        fields:
+          - label: Adresse
+            name: address
+            widget: text
+          - label: Telefon
+            name: phone
+            widget: string
+          - label: E-Mail
+            name: email
+            widget: string
+          - label: Öffnungszeiten
+            name: hours
+            widget: text
+          - label: Google Maps Embed
+            name: map_embed
+            widget: text
+
+  # Footer
+  - name: footer
+    label: Footer
+    files:
+      - label: Footer
+        name: footer
+        file: content/footer.md
+        fields:
+          - label: Copyright Text
+            name: copyright_text
+            widget: string
+          - label: Facebook Link
+            name: social_facebook
+            widget: string
+          - label: Instagram Link
+            name: social_instagram
+            widget: string
+          - label: LinkedIn Link
+            name: social_linkedin
+            widget: string
+
+  # Services / Leistungen
+  - name: services
+    label: Leistungen
+    folder: content/services/
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Beschreibung
+        name: description
+        widget: text
+      - label: Icon (Emoji)
+        name: icon
+        widget: string
+        default: 🌿
+      - label: Reihenfolge
+        name: order
+        widget: number
+        default: 0
+
+  # Testimonials
+  - name: testimonials
+    label: Kundenstimmen
+    folder: content/testimonials/
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: Name
+        name: name
+        widget: string
+      - label: Ort
+        name: location
+        widget: string
+      - label: Zitat
+        name: quote
+        widget: text
+      - label: Bewertung (1-5)
+        name: rating
+        widget: number
+        default: 5
+
+  # Galerie
+  - name: gallery
+    label: Galerie
+    folder: content/gallery/
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Bild URL
+        name: image
+        widget: image
+      - label: Alt Text
+        name: alt
+        widget: string
+      - label: Kategorie
+        name: category
+        widget: select
+        options:
+          - Garten
+          - Pflanzen
+          - Terrassen
+          - Bäume
+          - Blumen
+
+  # Team
+  - name: team
+    label: Team
+    folder: content/team/
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - label: Name
+        name: name
+        widget: string
+      - label: Berufsbezeichnung
+        name: role
+        widget: string
+      - label: Kurzbeschreibung
+        name: bio
+        widget: text
+      - label: Bild URL
+        name: image
+        widget: image

@@ -1,0 +1,136 @@
+# Pages CMS Configuration
+# https://pagescms.org/
+
+collections:
+  # Startseite
+  - name: home
+    label: Startseite
+    path: content/
+    filter: index.md
+    fields:
+      - name: hero_title
+        label: Hero Titel
+        type: string
+      - name: hero_subtitle
+        label: Hero Untertitel
+        type: text
+      - name: hero_cta_text
+        label: CTA Button Text
+        type: string
+      - name: hero_cta_link
+        label: CTA Button Link
+        type: string
+
+  # Kontakt
+  - name: contact
+    label: Kontakt
+    path: content/
+    filter: contact.md
+    fields:
+      - name: address
+        label: Adresse
+        type: text
+      - name: phone
+        label: Telefon
+        type: string
+      - name: email
+        label: E-Mail
+        type: string
+      - name: hours
+        label: Öffnungszeiten
+        type: text
+
+  # Footer
+  - name: footer
+    label: Footer
+    path: content/
+    filter: footer.md
+    fields:
+      - name: copyright_text
+        label: Copyright Text
+        type: string
+      - name: social_facebook
+        label: Facebook
+        type: string
+      - name: social_instagram
+        label: Instagram
+        type: string
+      - name: social_linkedin
+        label: LinkedIn
+        type: string
+
+  # Leistungen
+  - name: services
+    label: Leistungen
+    label_singular: Leistung
+    path: content/services/
+    fields:
+      - name: title
+        label: Titel
+        type: string
+      - name: description
+        label: Beschreibung
+        type: text
+      - name: icon
+        label: Icon
+        type: string
+      - name: order
+        label: Reihenfolge
+        type: number
+
+  # Kundenstimmen
+  - name: testimonials
+    label: Kundenstimmen
+    label_singular: Kundenstimme
+    path: content/testimonials/
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: location
+        label: Ort
+        type: string
+      - name: quote
+        label: Zitat
+        type: text
+      - name: rating
+        label: Bewertung
+        type: number
+
+  # Galerie
+  - name: gallery
+    label: Galerie
+    label_singular: Bild
+    path: content/gallery/
+    fields:
+      - name: title
+        label: Titel
+        type: string
+      - name: image
+        label: Bild
+        type: string
+      - name: alt
+        label: Alt Text
+        type: string
+      - name: category
+        label: Kategorie
+        type: string
+
+  # Team
+  - name: team
+    label: Team
+    label_singular: Teammitglied
+    path: content/team/
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: role
+        label: Beruf
+        type: string
+      - name: bio
+        label: Beschreibung
+        type: text
+      - name: image
+        label: Bild
+        type: string
